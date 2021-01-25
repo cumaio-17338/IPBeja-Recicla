@@ -28,7 +28,7 @@
 
                 <ImageView
                     android:layout_width="120dp"
-                    android:layout_height="150dp"
+                    android:layout_height="100dp"
                     android:id="@+id/photoRecycledMaterial"
                     android:src="@drawable/ic_launcher_background"
                     android:layout_marginBottom="0dp"
@@ -37,8 +37,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="0dp"
-                    android:layout_margin="10dp"
+                    android:layout_marginStart="20dp"
                     android:text="Garrafa de Água 1L"
                     android:textSize="12sp"
                     android:textStyle="bold"
@@ -55,7 +54,8 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="10dp"
                     android:text="Co2 Absorvido"
                     android:textColor="#000"
                     android:textSize="12sp"
@@ -65,7 +65,8 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="10dp"
                     android:text="Energia Poupada"
                     android:textColor="#000"
                     android:textSize="12sp"
@@ -74,7 +75,8 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="10dp"
                     android:text="Petróleo Poupada"
                     android:textColor="#000"
                     android:textSize="12sp"
@@ -91,7 +93,8 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="10dp"
                     android:text="0.05Kg"
                     android:textColor="#000"
                     android:textSize="12sp"
@@ -101,7 +104,8 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="10dp"
                     android:text="0.19kWh"
                     android:textColor="#000"
                     android:textSize="12sp"
@@ -110,7 +114,8 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="10dp"
                     android:text="0.09L"
                     android:textColor="#000"
                     android:textSize="12sp"
