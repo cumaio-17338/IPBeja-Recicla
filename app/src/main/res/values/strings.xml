@@ -27,4 +27,7 @@
         <item> 0,5l </item>
         <item> 1l </item>
     </string-array>
+    <string name="title_activity_impacts">Impacts</string>
+    <string name="tab_text_1">Meu</string>
+    <string name="tab_text_2">Comunidade</string>
 </resources>
