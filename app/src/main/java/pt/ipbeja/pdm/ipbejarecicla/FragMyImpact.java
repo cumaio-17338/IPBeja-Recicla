@@ -1,4 +1,4 @@
-package pt.ipbeja.pdm.ipbejarecicla.ui.main;
+package pt.ipbeja.pdm.ipbejarecicla;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,13 +9,19 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import pt.ipbeja.pdm.ipbejarecicla.R;
+public class FragMyImpact extends Fragment {
 
-public class Fragment1 extends Fragment {
+    View v;
+
+    public FragMyImpact()
+    {
+
+    }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment1_layout, container, false);
+        v = inflater.inflate(R.layout.fragments_my_impact, container, false);
+        return v;
     }
 }

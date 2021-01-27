@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
@@ -28,7 +28,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:layout_marginStart="10dp"
-                    android:id="@+id/totalReciclagens"
+                    android:id="@+id/total_reciclagens"
                     android:text="Total Reciclagens"
                     android:textColor="#000"
                     android:textSize="12sp"
@@ -43,7 +43,8 @@
                     android:text="Energia Poupada"
                     android:textColor="#000"
                     android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:id="@+id/energia_poupada"/>
 
 
 
@@ -63,7 +64,8 @@
                     android:text="30"
                     android:textColor="#000"
                     android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:id="@+id/total_reciclagens_edit"/>
 
 
                 <TextView
@@ -74,7 +76,8 @@
                     android:text="5.7kWh"
                     android:textColor="#000"
                     android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:id="@+id/energia_poupada_edit"/>
 
 
 
@@ -95,7 +98,8 @@
                     android:text="Co2 Absorvido"
                     android:textColor="#000"
                     android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:id="@+id/co2_absorvido"/>
 
 
                 <TextView
@@ -106,7 +110,8 @@
                     android:text="Petróleo Poupado"
                     android:textColor="#000"
                     android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:id="@+id/petroleo_poupado"/>
 
             </LinearLayout>
 
@@ -123,7 +128,8 @@
                     android:text="1.5Kg"
                     android:textColor="#000"
                     android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:id="@+id/co2_absorvido_edit"/>
 
 
                 <TextView
@@ -134,7 +140,8 @@
                     android:text="2.7"
                     android:textColor="#000"
                     android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:id="@+id/petroleo_poupado_edit"/>
 
 
 
