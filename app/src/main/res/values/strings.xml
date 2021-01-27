@@ -1,3 +1,30 @@
 <resources>
     <string name="app_name">IPBeja Recicla</string>
+
+    <string-array name="spinnerEscolas">
+        <item> Todos</item>
+        <item> Agrária</item>
+        <item> Educação</item>
+        <item> Estig</item>
+        <item> Saúde</item>
+    </string-array>
+
+    <string-array name="spinnerTipoUtilizador">
+        <item> Todos</item>
+        <item> Aluno</item>
+        <item> Docente</item>
+        <item> Funcionário</item>
+    </string-array>
+
+    <string-array name="spinnerTipoMaterial">
+        <item> Todos</item>
+        <item> Plástico</item>
+    </string-array>
+
+    <string-array name="spinnerCapacidade">
+        <item> Todos </item>
+        <item> 0,25l </item>
+        <item> 0,5l </item>
+        <item> 1l </item>
+    </string-array>
 </resources>
