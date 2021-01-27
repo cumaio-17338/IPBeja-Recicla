@@ -2,6 +2,7 @@ package pt.ipbeja.pdm.ipbejarecicla;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
 import android.view.View;
@@ -47,11 +48,16 @@ public class Statistics extends AppCompatActivity implements AdapterView.OnItemS
         capacitySpinner.setAdapter(capacitySpinnerAdapter);
         capacitySpinner.setOnItemSelectedListener(this);
 
+        Toolbar toolbar = findViewById(R.id.estatisticasToolBar);
+        toolbar.setTitle("Estatísticas");
+        setSupportActionBar(toolbar);
 
+        /*
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Estatísticas");
         actionBar.setDisplayShowHomeEnabled(true);
         actionBar.setDisplayShowHomeEnabled(true);
+        */
     }
 
     @Override
