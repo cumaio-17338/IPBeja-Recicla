@@ -1,55 +1,42 @@
 package pt.ipbeja.pdm.ipbejarecicla;
 
 import android.os.Bundle;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
 
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-
-import java.util.ArrayList;
-
-import pt.ipbeja.pdm.ipbejarecicla.ui.main.SectionsPagerAdapter;
 
 public class Impacts extends AppCompatActivity {
 
-    //Recycler
-    RecyclerView communinityRecyclerView;
-    CommunityImpactAdapter communityImpactAdapter;
-    ArrayList<String> community_impact_items;
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
+    private ViewPageAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        //
 
-
-
-        //items.add("Just a test"); //Fazer get da base de dados
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_impacts);
-        SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
-        ViewPager viewPager = findViewById(R.id.view_pager);
-        viewPager.setAdapter(sectionsPagerAdapter);
-        TabLayout tabs = findViewById(R.id.tabs);
-        tabs.setupWithViewPager(viewPager);
 
-        //TODO
+        Toolbar toolbar = findViewById(R.id.mainToolBar);
+        toolbar.setTitle(R.string.estatisticas);
+        setSupportActionBar(toolbar);
+
+        tabLayout = (TabLayout) findViewById(R.id.tablayout_id);
+        viewPager = (ViewPager) findViewById(R.id.view_pager_id);
+        adapter = new ViewPageAdapter(getSupportFragmentManager());
 
 
-        community_impact_items = new ArrayList<>();
-        communinityRecyclerView = findViewById(R.id.communityRecView);
-        communinityRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        communityImpactAdapter = new CommunityImpactAdapter(this, community_impact_items);
-        communinityRecyclerView.setAdapter(communityImpactAdapter);
+        //Add fragments
+        adapter.AddFragment(new FragMyImpact(), "Meu Impacto");
+        adapter.AddFragment(new FragCommunityImpact(), "Comunidade");
+        viewPager.setAdapter(adapter);
+        tabLayout.setupWithViewPager(viewPager);
+
+
 
 
     }

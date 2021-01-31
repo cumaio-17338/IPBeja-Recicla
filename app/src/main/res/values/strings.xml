@@ -9,6 +9,8 @@
     <string name="saber_mais">Saber Mais!</string>
     <string name="sobre">Sobre</string>
     <string name="poupancas">Poupanças</string>
+    <string name="estatisticas">Estatísticas</string>
+    <string name="definicoes">Definições</string>
 
     <string-array name="spinnerEscolas">
         <item> Todos</item>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
@@ -12,23 +12,25 @@
         android:layout_height="wrap_content"
         android:layout_margin="20dp">
 
+
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp">
 
+
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/total_reciclagens"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
                     android:layout_marginStart="10dp"
-                    android:id="@+id/totalReciclagens"
+                    android:layout_marginTop="20dp"
                     android:text="Total Reciclagens"
                     android:textColor="#000"
                     android:textSize="12sp"
@@ -36,19 +38,18 @@
 
 
                 <TextView
+                    android:id="@+id/energia_poupada"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
                     android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
                     android:text="Energia Poupada"
                     android:textColor="#000"
                     android:textSize="12sp"
                     android:textStyle="bold" />
 
 
-
             </LinearLayout>
-
 
             <LinearLayout
                 android:orientation="vertical"
@@ -63,7 +64,8 @@
                     android:text="30"
                     android:textColor="#000"
                     android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:id="@+id/total_reciclagens_edit"/>
 
 
                 <TextView
@@ -74,7 +76,8 @@
                     android:text="5.7kWh"
                     android:textColor="#000"
                     android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:id="@+id/energia_poupada_edit"/>
 
 
 
@@ -95,14 +98,16 @@
                     android:text="Co2 Absorvido"
                     android:textColor="#000"
                     android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:id="@+id/co2_absorvido"/>
 
 
                 <TextView
+                    android:id="@+id/petroleo_poupado"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
                     android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
                     android:text="Petróleo Poupado"
                     android:textColor="#000"
                     android:textSize="12sp"
@@ -123,7 +128,8 @@
                     android:text="1.5Kg"
                     android:textColor="#000"
                     android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:id="@+id/co2_absorvido_edit"/>
 
 
                 <TextView
@@ -134,13 +140,15 @@
                     android:text="2.7"
                     android:textColor="#000"
                     android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:id="@+id/petroleo_poupado_edit"/>
 
 
 
             </LinearLayout>
 
         </LinearLayout>
+
 
 
     </androidx.cardview.widget.CardView>
