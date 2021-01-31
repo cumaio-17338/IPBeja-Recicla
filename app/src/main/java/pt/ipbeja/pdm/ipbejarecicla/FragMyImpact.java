@@ -25,7 +25,6 @@ public class FragMyImpact extends Fragment {
 
         super.onCreate(savedInstanceState);
 
-        
         reciclagens = new ArrayList<>();
         reciclagens.add(new Reciclagens(30, 5.7, 1.5, 2.7));
         reciclagens.add(new Reciclagens(20, 3.3, 1.8, 1.7));
