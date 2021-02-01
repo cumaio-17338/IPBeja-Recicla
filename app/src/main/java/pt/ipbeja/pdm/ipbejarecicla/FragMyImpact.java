@@ -23,6 +23,7 @@ public class FragMyImpact extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
 
+
         super.onCreate(savedInstanceState);
 
         reciclagens = new ArrayList<>();
@@ -52,7 +53,7 @@ public class FragMyImpact extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        v = inflater.inflate(R.layout.fragments_community_impact, container, false);
+        v = inflater.inflate(R.layout.fragments_my_impact, container, false);
         recyclerView = (RecyclerView) v.findViewById(R.id.community_impact_recyclerview);
         CommunityImpactAdapter recyclerViewAdapter = new CommunityImpactAdapter(getContext(), reciclagens);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
