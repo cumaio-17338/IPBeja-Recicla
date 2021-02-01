@@ -24,7 +24,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mainToolBar" />
+        app:layout_constraintTop_toBottomOf="@+id/mainToolBar"
+        android:background="@drawable/text_input_border"
+        android:padding="15dp"/>
 
     <Spinner
         android:id="@+id/spinnerTipoUtilizadores"
@@ -35,7 +37,9 @@
         android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerEscolas" />
+        app:layout_constraintTop_toBottomOf="@+id/spinnerEscolas"
+        android:background="@drawable/text_input_border"
+        android:padding="15dp"/>
 
     <Spinner
         android:id="@+id/spinnerTipoMaterial"
@@ -47,7 +51,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerTipoUtilizadores" />
+        app:layout_constraintTop_toBottomOf="@+id/spinnerTipoUtilizadores"
+        android:background="@drawable/text_input_border"
+        android:padding="15dp"/>
 
     <Spinner
         android:id="@+id/spinnerCapacidade"
@@ -58,21 +64,27 @@
         android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerTipoMaterial" />
+        app:layout_constraintTop_toBottomOf="@+id/spinnerTipoMaterial"
+        android:background="@drawable/text_input_border"
+        android:padding="15dp"/>
 
     <Button
         android:id="@+id/pesquisarEstatisticas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
+        android:layout_marginBottom="85dp"
+        android:background="@drawable/round_bg"
+        android:text="Pesquisar"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerCapacidade"
-        android:text="Pesquisar"/>
+        app:layout_constraintTop_toBottomOf="@+id/spinnerCapacidade" />
 
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_marginBottom="63dp"

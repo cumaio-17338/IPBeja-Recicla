@@ -48,7 +48,7 @@ public class Statistics extends AppCompatActivity implements AdapterView.OnItemS
         capacitySpinner.setAdapter(capacitySpinnerAdapter);
         capacitySpinner.setOnItemSelectedListener(this);
 
-        Toolbar toolbar = findViewById(R.id.estatisticasToolBar);
+        Toolbar toolbar = findViewById(R.id.mainToolBar);
         toolbar.setTitle("Estatísticas");
         setSupportActionBar(toolbar);
 

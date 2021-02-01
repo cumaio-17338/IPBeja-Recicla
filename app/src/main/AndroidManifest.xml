@@ -21,6 +21,14 @@
         <activity
             android:name="pt.ipbeja.pdm.ipbejarecicla.Impacts"/>
 
+        <activity
+            android:name="pt.ipbeja.pdm.ipbejarecicla.Statistics"/>
+
+        <activity
+            android:name="pt.ipbeja.pdm.ipbejarecicla.LoginActivivty"/>
+
+        <activity
+            android:name="pt.ipbeja.pdm.ipbejarecicla.SignUpActivity"/>
     </application>
 
 </manifest>
