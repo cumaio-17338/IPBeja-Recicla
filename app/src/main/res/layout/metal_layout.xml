@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="match_parent"
+            android:layout_height="239dp"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/aluminium"
+            />
+
+
+        <me.biubiubiu.justifytext.library.JustifyTextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:maxLines="200"
+            android:text=" A grande vantagem da reciclagem dos metais está relacionada com a eliminação das despesas associadas à fase de transformação do minério em metal, em que existe um elevado consumo de energia, bem como necessidade de transporte de grandes quantidades de matéria-prima e respetivo acondicionamento em instalações dispendiosas. \n Esta situação deve-se ao fato das latas, quer de ferro ou de alumínio, serem 100% recicláveis e podem ser recicladas vezes sem conta.
+\n De tal forma este é um processo vantajoso, que se conseguem reduções muito significativas de consumos e impactos ambientais na produção de novos materiais a partir de metais reciclados. \n\n
+Curiosidade: \n
+A reciclagem de 1 tonelada de alumínio permite:
+- Reduzir o consumo energético em 95%, em relação à produção de alumínio primário; \n
+- Reduzir a poluição atmosférica em 95% e a poluição dos recursos hídricos em 97%; \n
+- Facilitar a recolha e o transporte, uma vez que as latas são facilmente identificáveis, leves e compactáveis; \n
+- Uma total eficiência da reciclagem, visto que uma lata é 100% reciclável. \n\n
+
+   **** O impacto ambiental em diferentes cenários **** \n\n
+
+- Reciclagem:  poupanças energéticas; redução da quantidade de metais em aterros e lixeiras; diminuição dos impactos negativos da extração e refinação de minérios; criação de novos negócios e mercados para os produtos reciclados. \n
+- Mar:  neste cenário, o metal faz também parte do 30% do material que é atirado ao mar, junto do vidro, papel e outros como materiais têxteis. Devido a sua natureza, ao ser exposto a água do mar, cria ferrugem, o que com o tempo e a movimentação da água, pode causar uma contaminação em larga escala desta. Não só os animais marinhos são afetados. A saúde humana é condicionada, principalmente para as pessoas que se banham nestas águas, bem como para os que tiram proveito para o uso doméstico. \n
+- Soterrado: devido à baixa solubilidade dos seus compostos e à resistência á degradação por microorganismos, o seu tempo de vida é prolongado, contribuindo efetivamente na contaminação e degradação dos solos. "
+            android:textSize="10sp" />
+
+
+
+
+    </LinearLayout>
+</ScrollView>

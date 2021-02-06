@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="match_parent"
+            android:layout_height="239dp"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/paper"
+            />
+
+        <me.biubiubiu.justifytext.library.JustifyTextView
+            android:layout_width="wrap_content"
+            android:layout_height="442dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:text="As maiores vantagens da reciclagem de papel são a diminuição de detritos sólidos e a economia de recursos naturais. \n Sendo 25% da composição física dos Resíduos Sólidos Urbanos em Portugal produtos de papel e cartão, a reciclagem permite libertar espaço nos aterros para outros materiais e produtos não recicláveis . Também a nível energético este processo é benéfico, dado consumir menos água e energia (240 kw/h por tonelada de fibra secundária contra 1000 kw/h por tonelada de fibra virgem). \n\n
+         **** O impacto ambiental em diferentes cenários **** \n\n
+        - Reciclagem: contribui na diminuição de detritos sólidos e na economia de recursos naturais. \n Sendo 25% da composição física dos Resíduos Sólidos Urbanos em Portugal produtos de papel e cartão, a reciclagem permite libertar espaço nos aterros para outros materiais e produtos não recicláveis. Tem também um caráter social, pois significa geração de emprego, principalmente, em cooperativas de catadores e recicladores de papel. \n Estima-se que, ao reciclar papéis, sejam criados mais empregos do que na produção do papel de celulose virgem, uma vez que na reciclagem existem os processos de coleta, triagem e classificação dos materiais. \n\n
+        - Mar: neste cenário, o papel faz parte do 30% do material que é atirado ao mar, junto do vidro, metal e outros como materiais têxteis. Este por ser um material relativamente mais fraco, ao ser exposto a água do mar, ainda que por pouco tempo, dissolve-se em micro partículas estando ao alcance dos animais marinhos que facilmente podem confundir como algo para a sua alimentação. \n\n
+        - Soterrado: dado o tempo que o papel pode levar a decompor-se, pode prejudicar a alimentação dos seres que habitam no subsolo; com este contaminado, deixará de cumprir com eficiência funções como a purificação da água, a fixação do carbono, entre outros. \n\n
+        - Queimado: composto essencialmente por fibras celulósicas. Quando exposto a combustão libera gases tóxicos, o que preojudica a atmosfera e a população com o possível risco de doenças respiratórias."
+            android:textSize="10sp" />
+
+
+
+    </LinearLayout>
+</ScrollView>

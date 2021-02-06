@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:layout_height="match_parent">
+
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="match_parent"
+            android:layout_height="239dp"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/plastic"
+            />
+
+        <me.biubiubiu.justifytext.library.JustifyTextView
+            android:layout_width="wrap_content"
+            android:layout_height="465dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:text=" Versátil, leve e económico, o plástico é uma das matérias-primas mais utilizadas pela humanidade. E resistente à degradação (que pode levar 400 a 500 anos) e a sua combustão ou decomposição gera dioxinas e ftalatos, entre outras substâncias tóxicas que, segundo diversos estudos, não só prejudicam a reprodução de espécies selvagens, como provocam disfunções sexuais entre os humanos, poluem o solo, intoxicam os oceanos. \n\n
+Curiosidade:\n
+Em Portugal os números fazem pensar. Anualmente, Portugal consome: \n
+- 721 milhões de garrafas de plástico; \n
+- 259 milhões de copos de café descartáveis. \n\n
+
+ --O impacto ambiental em diferentes cenários--\n\n
+- Reciclagem: nas últimas em seis décadas, cerca de 8,3 bilhões de toneladas de plástico foram produzidas. Face a este número, só 9% foi reciclado. 79% está a acumular-se em aterros e pelo ambiente. Projeta-se que até 2050 existirão 12 bilhões de toneladas de plástico nos aterros. \n
+
+- Mar: cerca de 8 milhões de toneladas são atiradas ao mar anualmente. Este material constitui cerca de 70% do lixo encontrado nos oceanos, contribuindo em larga escala para a degradação dos ecossistemas marinhos, criando desequilíbrio ecológico, contaminação de peixes e outros animais marinhos que serão consumidos por pessoas, mortes de pássaros que se alimentam de peixes contaminados, águas das praias tornam-se impróprias para o banho. \n
+A WWF (World Wide Fund) revela que 80% das tartarugas-marinhas-comuns, cujos juvenis se alimentam nos Açores, comem lixo, na sua maioria plástico. \n Além do impacto na vida marinha, os especialistas explicam que a poluição tem consequências preocupantes para o turismo e a pesca, com o setor a perder mais de 61 milhões de euros todos os anos. \n
+- Soterrado: resistem anos debaixo da terra dependendo do tempo e do tipo de plástico, mantém as suas características e não apresentam uma degradação significativa na sua resistência. \n A sua permanência por tempo indeterminado, pode contribuir para a poluição dos solos tornando-os inférteis para o cultivo de plantações. \n
+- Queimado: composto basicamente por petróleo, quando queimado libera gases tóxicos na atmosfera. \n Ameaça à vegetação e à saúde humana e animal. \n Aumenta o risco de doenças cardíacas e agrava doenças respiratórias. Libera carbono que contribui para mudanças climáticas.
+"
+            android:textSize="10sp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+        </ScrollView>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:layout_height="match_parent">
+
+
+
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="match_parent"
+            android:layout_height="239dp"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/batteries"
+            />
+
+
+        <me.biubiubiu.justifytext.library.JustifyTextView
+            android:layout_width="wrap_content"
+            android:layout_height="461dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+
+            android:text="As pilhas são dispositivos capazes de produzir eletricidade por meio de uma reação química. Algumas delas são compostas por metais pesados como: chumbo, mercúrio, níquel e cádmio. Possuem um tempo de decomposição de aproximadamente 500 mil anos se não for encaminhada para a reciclagem. A sua indevida reciclagem pode causar aos seres humanos algumas doenças graves, dentre elas, doenças renais, cânceres e ainda problemas relacionados com o sistema nervoso central. \n\n Segundo a Eurostat, estima-se que em Portugal a recolha e o envio para a reciclagem de pilhas e baterias portáteis de uso doméstico tenha ficado em 31% em 2018, sendo que a meta era 45% do total colocado no mercado, longe do objetivo da União Europeia de reciclar 75% de pilhas de níquel-cádmio. \n\n Uma pilha pode contaminar cerca de 175.000L de água. Quantidade superior ao que uma pessoa bebe em toda vida. \n\n Em 2017, foram recolhidas em Portugal 1,4T de pilhas e baterias usadas, o que representa  300g por cada português. \n\n As emissões de gases com Efeito de Estufa de uma bateria de ião de lítio podem ser reduzidas até cerca de 50% durante o seu tempo de vida, caso sejam utilizados materiais  reciclados (como o alumínio e o cobre) ao invês de matérias-primas virgens. "
+            android:textSize="10sp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+        </ScrollView>
+
+
+    </LinearLayout>
+</ScrollView>
