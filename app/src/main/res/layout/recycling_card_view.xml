@@ -9,12 +9,12 @@
 
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/recycling_cardView"
         app:cardElevation="10dp"
         app:cardCornerRadius="10dp"
         app:cardBackgroundColor="#FFFFFF"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp">
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:orientation="horizontal"
