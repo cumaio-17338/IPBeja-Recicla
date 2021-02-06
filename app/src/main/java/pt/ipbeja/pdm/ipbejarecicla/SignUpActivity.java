@@ -7,13 +7,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class SignUpActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class SignUpActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener {
 
     TextView tst;
+    Button btn_signup;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,19 +30,10 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
         schoolSpinner.setOnItemSelectedListener(this);
 
 
-        tst =  findViewById(R.id.textView_login);
-        tst.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                callLoginActivity(v);
-            }
-        });
-    }
+        btn_signup = findViewById(R.id.btn_sign_up);
+        tst = findViewById(R.id.textView_login);
 
-
-    public void callLoginActivity(View view) {
-        Intent intent = new Intent(this, LoginActivity.class);
-        startActivity(intent);
+        tst.setOnClickListener(this);
     }
 
 
@@ -52,5 +46,13 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
 
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v.getId() == R.id.textView_login) {
+            Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
+            startActivity(intent);
+        }
     }
 }
