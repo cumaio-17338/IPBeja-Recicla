@@ -31,15 +31,14 @@ public class FragMyImpact extends Fragment {
         reciclagem.add(new Reciclagem("Garrafa de Água", "1L", 0.05, 0.19, 0.09));
         reciclagem.add(new Reciclagem("Garrafa de Água", "1L", 0.05, 0.19, 0.09));
         reciclagem.add(new Reciclagem("Garrafa de Refrigerante", "1L", 0.05, 0.19, 0.09));
-       /* reciclagem.add(new Reciclagem("Garrafa de Água", "1L", 0.05, 0.19, 0.09));
+        reciclagem.add(new Reciclagem("Garrafa de Água", "1L", 0.05, 0.19, 0.09));
         reciclagem.add(new Reciclagem("Garrafa de Água", "1L", 0.05, 0.19, 0.09));
         reciclagem.add(new Reciclagem("Garrafa de Água", "1L", 0.05, 0.19, 0.09));
         reciclagem.add(new Reciclagem("Garrafa de Água", "1L", 0.05, 0.19, 0.09));
         reciclagem.add(new Reciclagem("Garrafa de Água", "1L", 0.05, 0.19, 0.09));
         reciclagem.add(new Reciclagem("Garrafa de Refrigerante", "1L", 0.05, 0.19, 0.09));
-*/
-    }
 
+    }
 
     public FragMyImpact() {
 
