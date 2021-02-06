@@ -4,6 +4,8 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
+
     <androidx.cardview.widget.CardView
         app:cardElevation="10dp"
         app:cardCornerRadius="10dp"
@@ -13,11 +15,19 @@
         android:layout_margin="20dp">
 
 
+        <TextView
+            android:id=""
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Escola"
+            android:layout_marginStart="10dp"/>
+
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp">
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp">
 
 
             <LinearLayout

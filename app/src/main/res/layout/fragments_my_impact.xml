@@ -13,7 +13,6 @@
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         app:cardBackgroundColor="#FFFFFF"
         app:cardCornerRadius="10dp"
@@ -22,33 +21,49 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Escola" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="20dp">
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <ImageView
-                    android:id="@+id/photoRecycledMaterial"
-                    android:layout_width="120dp"
-                    android:layout_height="100dp"
-                    android:layout_margin="10dp"
-                    android:layout_marginBottom="0dp"
-                    android:src="@drawable/ic_launcher_background" />
-
                 <TextView
+                    android:id="@+id/total_reciclagens"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:text="Garrafa de Água 1L"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Total Reciclagens"
                     android:textColor="#000"
                     android:textSize="12sp"
                     android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/energia_poupada"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Energia Poupada"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
 
             </LinearLayout>
 
@@ -57,8 +72,41 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
+                <TextView
+                    android:id="@+id/total_reciclagens_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
+                    android:text="30"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
 
                 <TextView
+                    android:id="@+id/energia_poupada_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
+                    android:text="5.7kWh"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/co2_absorvido"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
@@ -70,25 +118,15 @@
 
 
                 <TextView
+                    android:id="@+id/petroleo_poupado"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="20dp"
-                    android:text="Energia Poupada"
+                    android:text="Petróleo Poupado"
                     android:textColor="#000"
                     android:textSize="12sp"
                     android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="20dp"
-                    android:text="Petróleo Poupada"
-                    android:textColor="#000"
-                    android:textSize="12sp"
-                    android:textStyle="bold" />
-
 
             </LinearLayout>
 
@@ -98,55 +136,50 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/co2_absorvido_edit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="20dp"
-                    android:text="0.05Kg"
+                    android:text="1.5Kg"
                     android:textColor="#000"
                     android:textSize="12sp"
                     android:textStyle="bold" />
 
 
                 <TextView
+                    android:id="@+id/petroleo_poupado_edit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="20dp"
-                    android:text="0.19kWh"
+                    android:text="2.7"
                     android:textColor="#000"
                     android:textSize="12sp"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="20dp"
-                    android:text="0.09L"
-                    android:textColor="#000"
-                    android:textSize="12sp"
-                    android:textStyle="bold" />
 
             </LinearLayout>
 
         </LinearLayout>
 
 
-
     </androidx.cardview.widget.CardView>
 
+
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/my_impact_recyclerview"
         android:layout_width="0dp"
         android:layout_height="500dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView"
-        tools:listitem="@layout/school_statistics_card_view" />
+        app:layout_constraintVertical_bias="0.19999999"
+        tools:listitem="@layout/recycling_card_view" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
