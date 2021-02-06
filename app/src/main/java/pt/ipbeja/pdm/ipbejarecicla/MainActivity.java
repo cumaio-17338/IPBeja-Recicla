@@ -20,6 +20,8 @@ public class MainActivity extends AppCompatActivity{
         Toolbar toolbar = findViewById(R.id.mainToolBar);
         learn_more = findViewById(R.id.cardView_learn_more);
         impacts = findViewById(R.id.cardView_impacts);
+        about = findViewById(R.id.cardView_about);
+
         impacts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
