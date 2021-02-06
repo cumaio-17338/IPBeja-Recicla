@@ -24,10 +24,10 @@
             android:layout_marginLeft="16dp"
             android:layout_marginTop="80dp"
             android:maxLines="200"
-            android:text=" Esta aplicação tem como objetivo auxiliar e incentivar cidadãos da comunidade académica do Instituto Politécnico de Beja a reciclarem mais. \n\n
-                           A funcionalidade principal da aplicação é de calcular o impacto positivo que o utilizador causa ao meio ambiente quando recicla cada material. \n
-                           Podendo efetuar o reconhecimento do mesmo material através de fotografia ou introdução manual de dados.\n\n
-                           A mesma permite visualização de impactos que os materiais (vidro, metal-alumínio, plástico-PET, papel) causam ao meio ambiente quando não-reciclados. \n\n
+            android:text="    Esta aplicação tem como objetivo auxiliar e incentivar cidadãos da comunidade académica do Instituto Politécnico de Beja a reciclarem mais. \n\n
+   A funcionalidade principal da aplicação é de calcular o impacto positivo que o utilizador causa ao meio ambiente quando recicla cada material. \n
+   Podendo efetuar o reconhecimento do mesmo material através de fotografia ou introdução manual de dados.\n\n
+   A mesma permite visualização de impactos que os materiais (vidro, metal-alumínio, plástico-PET, papel) causam ao meio ambiente quando não-reciclados. \n\n
                            \n\n
                            IPBeja Recicla versão 1.0.
                            "
