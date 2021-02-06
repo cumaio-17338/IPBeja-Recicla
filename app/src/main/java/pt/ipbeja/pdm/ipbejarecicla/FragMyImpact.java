@@ -18,7 +18,7 @@ public class FragMyImpact extends Fragment {
 
     View v;
     private RecyclerView recyclerView;
-    private List<Reciclagens> reciclagens;
+    private List<Reciclagem> reciclagem;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -26,19 +26,18 @@ public class FragMyImpact extends Fragment {
 
         super.onCreate(savedInstanceState);
 
-        reciclagens = new ArrayList<>();
-        reciclagens.add(new Reciclagens(30, 5.7, 1.5, 2.7));
-        reciclagens.add(new Reciclagens(20, 3.3, 1.8, 1.7));
-        reciclagens.add(new Reciclagens(20, 3.3, 1.8, 1.7));
-        reciclagens.add(new Reciclagens(20, 3.3, 1.8, 1.7));
-        reciclagens.add(new Reciclagens(20, 3.3, 1.8, 1.7));
-        reciclagens.add(new Reciclagens(20, 3.3, 1.8, 1.7));
-        reciclagens.add(new Reciclagens(20, 3.3, 1.8, 1.7));
-        reciclagens.add(new Reciclagens(20, 3.3, 1.8, 1.7));
-        reciclagens.add(new Reciclagens(20, 3.3, 1.8, 1.7));
-        reciclagens.add(new Reciclagens(20, 3.3, 1.8, 1.7));
-        reciclagens.add(new Reciclagens(20, 3.3, 1.8, 1.7));
-        reciclagens.add(new Reciclagens(20, 3.3, 1.8, 1.7));
+        reciclagem = new ArrayList<>();
+        reciclagem.add(new Reciclagem("Garrafa de Água", "1L", 0.05, 0.19, 0.09));
+        reciclagem.add(new Reciclagem("Garrafa de Água", "1L", 0.05, 0.19, 0.09));
+        reciclagem.add(new Reciclagem("Garrafa de Água", "1L", 0.05, 0.19, 0.09));
+        reciclagem.add(new Reciclagem("Garrafa de Água", "1L", 0.05, 0.19, 0.09));
+        reciclagem.add(new Reciclagem("Garrafa de Água", "1L", 0.05, 0.19, 0.09));
+        reciclagem.add(new Reciclagem("Garrafa de Água", "1L", 0.05, 0.19, 0.09));
+        reciclagem.add(new Reciclagem("Garrafa de Água", "1L", 0.05, 0.19, 0.09));
+        reciclagem.add(new Reciclagem("Garrafa de Água", "1L", 0.05, 0.19, 0.09));
+        reciclagem.add(new Reciclagem("Garrafa de Água", "1L", 0.05, 0.19, 0.09));
+        reciclagem.add(new Reciclagem("Garrafa de Água", "1L", 0.05, 0.19, 0.09));
+
     }
 
 
@@ -55,7 +54,7 @@ public class FragMyImpact extends Fragment {
 
         v = inflater.inflate(R.layout.fragments_my_impact, container, false);
         recyclerView = (RecyclerView) v.findViewById(R.id.my_impact_recyclerview);
-        CommunityImpactAdapter recyclerViewAdapter = new CommunityImpactAdapter(getContext(), reciclagens);
+        MyImpactAdapter recyclerViewAdapter = new MyImpactAdapter(getContext(), reciclagem);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(recyclerViewAdapter);
         return v;

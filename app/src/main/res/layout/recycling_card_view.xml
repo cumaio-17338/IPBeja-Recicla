@@ -41,7 +41,8 @@
                     android:text="Garrafa de Água 1L"
                     android:textSize="12sp"
                     android:textStyle="bold"
-                    android:textColor="#000"/>
+                    android:textColor="#000"
+                    android:id="@+id/my_type_of_material_and_capacity_saved_textView"/>
 
             </LinearLayout>
 
@@ -98,7 +99,8 @@
                     android:text="0.05Kg"
                     android:textColor="#000"
                     android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:id="@+id/my_co2_saved_textView"/>
 
 
                 <TextView
@@ -109,7 +111,8 @@
                     android:text="0.19kWh"
                     android:textColor="#000"
                     android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:id="@+id/my_energy_saved_textView"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -119,7 +122,8 @@
                     android:text="0.09L"
                     android:textColor="#000"
                     android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:id="@+id/my_petroleum_saved_textView"/>
 
             </LinearLayout>
 

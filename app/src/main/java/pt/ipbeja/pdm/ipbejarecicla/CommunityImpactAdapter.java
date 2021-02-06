@@ -44,6 +44,7 @@ public class CommunityImpactAdapter extends RecyclerView.Adapter<CommunityImpact
         holder.textViewEnergiaPoupada.setText("Energia Poupada");
         holder.textViewCo2Absorvido.setText("Co2 Absorvido");
         holder.textViewPetroleoPoupado.setText("Petroleo Poupado");
+
     }
 
     @Override
