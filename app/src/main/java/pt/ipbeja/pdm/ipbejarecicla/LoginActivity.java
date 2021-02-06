@@ -37,5 +37,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         } else if (v.getId() == R.id.btn_login){
             startActivity(new Intent(LoginActivity.this, MainActivity.class));
         }
+
     }
 }
