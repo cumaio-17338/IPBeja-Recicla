@@ -1,19 +1,16 @@
 package pt.ipbeja.pdm.ipbejarecicla;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.View;
-
 public class MainActivity extends AppCompatActivity{
 
-    CardView impacts, learn_more;
+    CardView impacts, learn_more, about;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,8 +38,18 @@ public class MainActivity extends AppCompatActivity{
         toolbar.setTitle("Olá, Utilizador");
         setSupportActionBar(toolbar);
 
+
+
+        //"Sobre"- button action
+        about.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, Sobre.class));
+            }
+        });
+
+        //"Sobre"- button action
+
     }
-
-
 
 }
