@@ -25,6 +25,7 @@
 
         <activity android:name="pt.ipbeja.pdm.ipbejarecicla.SignUpActivity" />
         <activity android:name="pt.ipbeja.pdm.ipbejarecicla.SaberMais" />
+        <activity android:name="pt.ipbeja.pdm.ipbejarecicla.Sobre" />
 
     </application>
 
