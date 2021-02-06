@@ -2,15 +2,18 @@ package pt.ipbeja.pdm.ipbejarecicla;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class SignUpActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
+    TextView tst;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,7 +25,23 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
         schoolSpinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         schoolSpinner.setAdapter(schoolSpinnerAdapter);
         schoolSpinner.setOnItemSelectedListener(this);
+
+
+        tst =  findViewById(R.id.textView_login);
+        tst.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                callLoginActivity(v);
+            }
+        });
     }
+
+
+    public void callLoginActivity(View view) {
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+    }
+
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {

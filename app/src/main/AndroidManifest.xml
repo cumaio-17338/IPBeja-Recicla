@@ -9,8 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.IPBejaRecicla">
-<!--        <activity android:name=".Statistics"></activity>-->
-        <activity android:name=".MainActivity">
+        <activity android:name="pt.ipbeja.pdm.ipbejarecicla.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,8 +17,14 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name="pt.ipbeja.pdm.ipbejarecicla.Impacts"/>
+        <activity android:name="pt.ipbeja.pdm.ipbejarecicla.Impacts" />
+
+        <activity android:name="pt.ipbeja.pdm.ipbejarecicla.Statistics" />
+
+        <activity android:name="pt.ipbeja.pdm.ipbejarecicla.MainActivity" />
+
+        <activity android:name="pt.ipbeja.pdm.ipbejarecicla.SignUpActivity" />
+        <activity android:name="pt.ipbeja.pdm.ipbejarecicla.SaberMais" />
 
     </application>
 
