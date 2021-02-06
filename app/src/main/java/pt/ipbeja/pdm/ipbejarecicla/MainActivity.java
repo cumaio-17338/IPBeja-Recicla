@@ -13,7 +13,7 @@ import android.view.View;
 
 public class MainActivity extends AppCompatActivity{
 
-    CardView impacts;
+    CardView impacts, learn_more;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,12 +21,20 @@ public class MainActivity extends AppCompatActivity{
         setContentView(R.layout.activity_main);
 
         Toolbar toolbar = findViewById(R.id.mainToolBar);
+        learn_more = findViewById(R.id.cardView_learn_more);
         impacts = findViewById(R.id.cardView_impacts);
         impacts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, Impacts.class);
                 startActivity(intent);
+            }
+        });
+
+        learn_more.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, SaberMais.class));
             }
         });
 

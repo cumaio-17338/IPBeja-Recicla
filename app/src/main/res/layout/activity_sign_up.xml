@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivivty">
+    tools:context=".LoginActivity">
 
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white">
+
     <View
         android:id="@+id/view2"
         android:layout_width="match_parent"
@@ -17,7 +18,7 @@
         android:background="@drawable/ic_wave"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view1" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView7"
@@ -34,7 +35,7 @@
         app:layout_constraintTop_toBottomOf="@+id/view2" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout_username"
+        android:id="@+id/textInputLayout_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -46,7 +47,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView7">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/input_username"
+            android:id="@+id/input_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/text_input_border"
@@ -70,9 +71,10 @@
         android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout_username">
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout_email">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input_full_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/text_input_border"
@@ -97,6 +99,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout_full_name">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/text_input_border"

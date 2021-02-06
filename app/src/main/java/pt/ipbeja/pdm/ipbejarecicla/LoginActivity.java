@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.google.android.material.textfield.TextInputEditText;
 
-public class LoginActivivty extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     TextView tst;
 
