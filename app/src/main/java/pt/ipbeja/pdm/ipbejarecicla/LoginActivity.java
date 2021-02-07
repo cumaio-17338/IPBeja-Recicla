@@ -9,11 +9,13 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
     TextView tst;
     Button btn_login;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +27,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         tst.setOnClickListener(this);
         btn_login.setOnClickListener(this);
+
+        mAuth = FirebaseAuth.getInstance();
 
     }
     
