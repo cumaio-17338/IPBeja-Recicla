@@ -18,7 +18,9 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
@@ -38,7 +40,7 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
     private TextInputEditText nameEdit;
     private TextInputEditText passwordEdit;
     private String schoolEdit;
-    private List<QueryDocumentSnapshot> academicCommunityUsers;
+    private List<QueryDocumentSnapshot> academicCommunityMembers;
     private FirebaseFirestore mStore;
     private String type_of_user;
     private String school;
@@ -52,8 +54,8 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
         mStore = FirebaseFirestore.getInstance();
 
         //Get data from firestore
-        academicCommunityUsers = new ArrayList<>();
-        academicCommunityUsers = getAcademicCommunityUsers();
+        academicCommunityMembers = new ArrayList<>();
+        academicCommunityMembers = getAcademicCommunityMembers();
 
         Spinner schoolSpinner = findViewById(R.id.spinner_escolas_signup);
         ArrayAdapter<CharSequence> schoolSpinnerAdapter = ArrayAdapter.createFromResource(this, R.array.spinnerEscolas, android.R.layout.simple_spinner_item);
@@ -79,34 +81,18 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
      *
      * @return List of academic community users
      */
-    private List<QueryDocumentSnapshot> getAcademicCommunityUsers() {
+    private List<QueryDocumentSnapshot> getAcademicCommunityMembers() {
 
         List<QueryDocumentSnapshot> list = new ArrayList<>();
 
-        mStore.collection("membrosComunidadeAcademica")
-                .get()
-                .addOnCompleteListener(task -> {
-                    if (task.isSuccessful()) {
-                        Toast.makeText(this, "Successfully!", Toast.LENGTH_SHORT).show();
-                        for (QueryDocumentSnapshot document : task.getResult()) {
-                            Toast.makeText(this, "Document: " + document.get("email"), Toast.LENGTH_SHORT).show();
-                            list.add(document);
-                            Toast.makeText(this, "Segundo toast!", Toast.LENGTH_SHORT).show();
-                        }
-                    } else {
-                        Toast.makeText(SignUpActivity.this, "Erro ao buscar dados dos membros da comunidade!", Toast.LENGTH_SHORT).show();
-                    }
-                });
-
-
-       /* mStore.collection("membrosComunidadeAcademica")
+       mStore.collection("membrosComunidadeAcademica")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
-                                Log.d("TAG", document.getId() + " => " + document.getData());
+                                Log.d("TAG", document.getId() + " => " + document.get("email"));
                                 list.add(document);
                                 
                             }
@@ -114,7 +100,7 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
                             Log.d("TAG", "Error getting documents: ", task.getException());
                         }
                     }
-                });*/
+                });
         return list;
     }
 
@@ -177,7 +163,6 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
 
         //Check if user belongs to academic community
         if (this.checkNewUser(email)) {
-            Toast.makeText(this, "Usuário registado, bem-vindo!", Toast.LENGTH_SHORT).show();
             this.registerNewUser(name, email, password);
 
             //Type of user is admin
@@ -203,11 +188,13 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
      * @param password
      */
     private void registerNewUser(String name, String email, String password) {
-        mAuth.createUserWithEmailAndPassword(email, password)
+/*        mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
 
                         String userID = mAuth.getCurrentUser().getUid();
+
+                        Toast.makeText(this, "User ID:"+userID, Toast.LENGTH_SHORT).show();
 
                         //Access document that belongs to user
                         DocumentReference documentReference = mStore.collection("usuarios").document(userID);
@@ -217,10 +204,42 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
                         user.put("tipo_utilizador", type_of_user);
                         user.put("escola", school);
                         documentReference.set(user).addOnSuccessListener(aVoid -> Toast.makeText(SignUpActivity.this, "Utilizador criado com sucesso!", Toast.LENGTH_SHORT).show());
-                        startActivity(new Intent(SignUpActivity.this, MainActivity.class));
-                        finish();
+*//*                        startActivity(new Intent(SignUpActivity.this, MainActivity.class));
+                        finish();*//*
                     } else {
                         Toast.makeText(SignUpActivity.this, "Falha ao criar utilizador!", Toast.LENGTH_LONG).show();
+                    }
+                });*/
+
+
+        mAuth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            Log.d("TAG", "createUserWithEmail:success");
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            String userID = user.getUid();
+
+                            Toast.makeText(SignUpActivity.this, "User ID:"+userID, Toast.LENGTH_SHORT).show();
+
+                            //Access document that belongs to user
+                            DocumentReference documentReference = mStore.collection("usuarios").document(userID);
+                            Map<String, Object> userFireS = new HashMap<>();
+                            userFireS.put("nome", name);
+                            userFireS.put("email", email);
+                            userFireS.put("tipo_utilizador", type_of_user);
+                            userFireS.put("escola", school);
+                            documentReference.set(user).addOnSuccessListener(aVoid -> Toast.makeText(SignUpActivity.this, "Utilizador criado com sucesso!", Toast.LENGTH_SHORT).show());
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Log.w("TAG", "createUserWithEmail:failure", task.getException());
+                            Toast.makeText(SignUpActivity.this, "Authentication failed.",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+
+                        // ...
                     }
                 });
     }
@@ -233,15 +252,15 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
      */
     private boolean checkNewUser(String email) {
 
-        int q = academicCommunityUsers.size();
+        int q = academicCommunityMembers.size();
         Toast.makeText(this, "Size is: " + q, Toast.LENGTH_SHORT).show();
         for (int i = 0; i < q; i++) {
 
-            String var = academicCommunityUsers.get(i).get("email").toString();
+            String var = academicCommunityMembers.get(i).get("email").toString();
             Log.d("TAG", "Usuario " + (i) + " " + var);
             if (email.equals(var)) {
-                type_of_user = academicCommunityUsers.get(i).get("tipo_utilizador").toString();
-                school = academicCommunityUsers.get(i).get("escola").toString();
+                type_of_user = academicCommunityMembers.get(i).get("tipo_utilizador").toString();
+                school = academicCommunityMembers.get(i).get("escola").toString();
 
                 Toast.makeText(this, email + ":" + var, Toast.LENGTH_LONG).show();
                 return true;
