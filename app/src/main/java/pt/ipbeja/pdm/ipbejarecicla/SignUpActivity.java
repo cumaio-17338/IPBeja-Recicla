@@ -36,12 +36,12 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
     TextView tst;
     Button btn_signup;
     private FirebaseAuth mAuth;
+    private FirebaseFirestore mStore;
     private TextInputEditText emailEdit;
     private TextInputEditText nameEdit;
     private TextInputEditText passwordEdit;
     private String schoolEdit;
     private List<QueryDocumentSnapshot> academicCommunityMembers;
-    private FirebaseFirestore mStore;
     private String type_of_user;
     private String school;
 
@@ -52,10 +52,6 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
 
         mAuth = FirebaseAuth.getInstance();
         mStore = FirebaseFirestore.getInstance();
-
-        //Get data from firestore
-        academicCommunityMembers = new ArrayList<>();
-        academicCommunityMembers = getAcademicCommunityMembers();
 
         Spinner schoolSpinner = findViewById(R.id.spinner_escolas_signup);
         ArrayAdapter<CharSequence> schoolSpinnerAdapter = ArrayAdapter.createFromResource(this, R.array.spinnerEscolas, android.R.layout.simple_spinner_item);
@@ -123,6 +119,7 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
         if (v.getId() == R.id.textView_login) {
             Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
             startActivity(intent);
+            finish();
         } else if (v.getId() == R.id.btn_sign_up) {
             registerUser();
         }
@@ -160,115 +157,32 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
             return;
         }
 
-
-        //Check if user belongs to academic community
-        if (this.checkNewUser(email)) {
-            this.registerNewUser(name, email, password);
-
-            //Type of user is admin
-            if (type_of_user.equals("administrador")) {
-                Intent intent = new Intent(SignUpActivity.this, Statistics.class);
-                startActivity(intent);
-            } else {
-                Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
-
-        } else {
-            Toast.makeText(this, "Email inválido, tente novamente!", Toast.LENGTH_SHORT).show();
-        }
+        school = "ESTIG";
+        createNewUser(email, password, name, school);
 
     }
 
-    /**
-     * Register new user and send data to database
-     *
-     * @param name
-     * @param email
-     * @param password
-     */
-    private void registerNewUser(String name, String email, String password) {
-/*        mAuth.createUserWithEmailAndPassword(email, password)
+    private void createNewUser(String email, String password, String name, String school) {
+        mAuth.createUserWithEmailAndPassword(email,password)
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
-
+                        Toast.makeText(this, "User created on F. Auth!", Toast.LENGTH_SHORT).show();
                         String userID = mAuth.getCurrentUser().getUid();
 
-                        Toast.makeText(this, "User ID:"+userID, Toast.LENGTH_SHORT).show();
-
                         //Access document that belongs to user
-                        DocumentReference documentReference = mStore.collection("usuarios").document(userID);
+                        DocumentReference documentReference = mStore.collection("users").document(userID);
                         Map<String, Object> user = new HashMap<>();
-                        user.put("nome", name);
+                        user.put("name", name);
                         user.put("email", email);
-                        user.put("tipo_utilizador", type_of_user);
                         user.put("escola", school);
-                        documentReference.set(user).addOnSuccessListener(aVoid -> Toast.makeText(SignUpActivity.this, "Utilizador criado com sucesso!", Toast.LENGTH_SHORT).show());
-*//*                        startActivity(new Intent(SignUpActivity.this, MainActivity.class));
-                        finish();*//*
-                    } else {
-                        Toast.makeText(SignUpActivity.this, "Falha ao criar utilizador!", Toast.LENGTH_LONG).show();
+                        documentReference.set(user).addOnSuccessListener(aVoid -> Toast.makeText(SignUpActivity.this, "Usuário criado com sucesso!", Toast.LENGTH_LONG).show());
+
                     }
-                });*/
-
-
-        mAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.d("TAG", "createUserWithEmail:success");
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            String userID = user.getUid();
-
-                            Toast.makeText(SignUpActivity.this, "User ID:"+userID, Toast.LENGTH_SHORT).show();
-
-                            //Access document that belongs to user
-                            DocumentReference documentReference = mStore.collection("usuarios").document(userID);
-                            Map<String, Object> userFireS = new HashMap<>();
-                            userFireS.put("nome", name);
-                            userFireS.put("email", email);
-                            userFireS.put("tipo_utilizador", type_of_user);
-                            userFireS.put("escola", school);
-                            documentReference.set(user).addOnSuccessListener(aVoid -> Toast.makeText(SignUpActivity.this, "Utilizador criado com sucesso!", Toast.LENGTH_SHORT).show());
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Log.w("TAG", "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(SignUpActivity.this, "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
-                        }
-
-                        // ...
+                    else {
+                        Toast.makeText(SignUpActivity.this, "Erro ao criar usuário!", Toast.LENGTH_LONG).show();
                     }
                 });
     }
 
-    /**
-     * Function to check if user belongs to academic community
-     *
-     * @param email Email introduced by the user
-     * @return Boolean value
-     */
-    private boolean checkNewUser(String email) {
 
-        int q = academicCommunityMembers.size();
-        Toast.makeText(this, "Size is: " + q, Toast.LENGTH_SHORT).show();
-        for (int i = 0; i < q; i++) {
-
-            String var = academicCommunityMembers.get(i).get("email").toString();
-            Log.d("TAG", "Usuario " + (i) + " " + var);
-            if (email.equals(var)) {
-                type_of_user = academicCommunityMembers.get(i).get("tipo_utilizador").toString();
-                school = academicCommunityMembers.get(i).get("escola").toString();
-
-                Toast.makeText(this, email + ":" + var, Toast.LENGTH_LONG).show();
-                return true;
-            } else {
-                Toast.makeText(this, email + ":" + var, Toast.LENGTH_LONG).show();
-            }
-        }
-
-        return false;
-    }
 }
