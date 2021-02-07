@@ -1,8 +1,5 @@
 package pt.ipbeja.pdm.ipbejarecicla;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,12 +12,13 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
@@ -81,7 +79,7 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
 
         List<QueryDocumentSnapshot> list = new ArrayList<>();
 
-       mStore.collection("membrosComunidadeAcademica")
+        mStore.collection("membrosComunidadeAcademica")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -90,7 +88,7 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 Log.d("TAG", document.getId() + " => " + document.get("email"));
                                 list.add(document);
-                                
+
                             }
                         } else {
                             Log.d("TAG", "Error getting documents: ", task.getException());
@@ -163,7 +161,7 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
     }
 
     private void createNewUser(String email, String password, String name, String school) {
-        mAuth.createUserWithEmailAndPassword(email,password)
+        mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
                         Toast.makeText(this, "User created on F. Auth!", Toast.LENGTH_SHORT).show();
@@ -177,12 +175,10 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
                         user.put("escola", school);
                         documentReference.set(user).addOnSuccessListener(aVoid -> Toast.makeText(SignUpActivity.this, "Usuário criado com sucesso!", Toast.LENGTH_LONG).show());
 
-                    }
-                    else {
+                    } else {
                         Toast.makeText(SignUpActivity.this, "Erro ao criar usuário!", Toast.LENGTH_LONG).show();
                     }
                 });
-    }
+    }}
 
 
-}
