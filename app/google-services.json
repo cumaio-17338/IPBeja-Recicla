@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "190585805552",
+    "project_id": "ipbeja-recicla",
+    "storage_bucket": "ipbeja-recicla.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:190585805552:android:dff6a57e75fef4480a4035",
+        "android_client_info": {
+          "package_name": "pt.ipbeja.pdm.ipbejarecicla"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "190585805552-joiq71m56rrm7gtf382p47pnpaqim7n6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC--AexF8ui719pjb_AAikINyYfnjytcoE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "190585805552-joiq71m56rrm7gtf382p47pnpaqim7n6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

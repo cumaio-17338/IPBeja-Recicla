@@ -108,6 +108,7 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 Log.d("TAG", document.getId() + " => " + document.getData());
                                 list.add(document);
+                                
                             }
                         } else {
                             Log.d("TAG", "Error getting documents: ", task.getException());
