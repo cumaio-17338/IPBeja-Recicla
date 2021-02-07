@@ -18,7 +18,7 @@ public class Sobre extends AppCompatActivity {
 
         //to put the green toolbar
         Toolbar toolbar = findViewById(R.id.mainToolBar);
-        toolbar.setTitle(R.string.saber_mais);
+        toolbar.setTitle(R.string.sobre);
         setSupportActionBar(toolbar);
 
     }

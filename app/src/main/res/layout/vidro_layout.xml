@@ -32,19 +32,19 @@
 
             android:scrollHorizontally="true"
             android:text=" O vidro é infinitamente reciclável; ao reciclar poupamos matéria-prima, reduzimos o consumo de energia, as emissões de CO2 e a deposição em aterro de embalagens. \n\n
-                        - Poupança de matéria-prima: menor consumo de recursos minerais e industriais. Para produzir 1 tonelada de vidro é suficiente 1 tonelada de casco de vidro (em alternativa a 1,2 toneladas de matéria-prima original).\n
+  - Poupança de matéria-prima: menor consumo de recursos minerais e industriais. Para produzir 1 tonelada de vidro é suficiente 1 tonelada de casco de vidro (em alternativa a 1,2 toneladas de matéria-prima original).\n
 
-                        - Economia de energia: quer directamente na fusão (por cada 10% de casco de vidro incorporado, reduz-se 2,5% de energia, em termos unitários) quer, indirectamente, na matéria-prima substituida.\n
+  - Economia de energia: quer directamente na fusão (por cada 10% de casco de vidro incorporado, reduz-se 2,5% de energia, em termos unitários) quer, indirectamente, na matéria-prima substituida.\n
 
-                        - Proteção do meio ambiente: resulta numa menor poluição global porque: evita a deposição em aterro das embalagens usadas (apesar do vidro ser inerte); reduz os efeitos das emissões gasosas, quer as do processo de fusão do vidro, quer as do fabrico de certas matérias-primas (ex. a soda). Hábitos sociais de poupança – Cria hábitos na população, quer através da proteção ambiental, quer através da consciencialização de que os recursos naturais são limitados. \n\n
+  - Proteção do meio ambiente: resulta numa menor poluição global porque: evita a deposição em aterro das embalagens usadas (apesar do vidro ser inerte); reduz os efeitos das emissões gasosas, quer as do processo de fusão do vidro, quer as do fabrico de certas matérias-primas (ex. a soda). Hábitos sociais de poupança – Cria hábitos na população, quer através da proteção ambiental, quer através da consciencialização de que os recursos naturais são limitados. \n\n
 
-                       **** O impacto ambiental em diferentes cenários **** \n\n
+  **** O impacto ambiental em diferentes cenários **** \n\n
 
-                        - Reciclagem: este é dos materiais mais recicláveis. Possui um tempo indeterminado de decomposição. No processo de reutilização, o uso de gás natural contribui para uma menor poluição atmosférica, consequentemente um menor impacto no ambiente. \n
+  - Reciclagem: este é dos materiais mais recicláveis. Possui um tempo indeterminado de decomposição. No processo de reutilização, o uso de gás natural contribui para uma menor poluição atmosférica, consequentemente um menor impacto no ambiente. \n
 
-                        - Mar: neste cenário, o vidro faz parte de 30% do material que é atirado ao mar, junto do papel, metal e outros como materiais têxteis. \n
+  - Mar: neste cenário, o vidro faz parte de 30% do material que é atirado ao mar, junto do papel, metal e outros como materiais têxteis. \n
 
-                        - Soterrado: permanece por dezenas de anos sem se decompor, isto pelo fato deste material não ser digerido por bactérias, e nem reagir a substâncias no solo.
+  - Soterrado: permanece por dezenas de anos sem se decompor, isto pelo fato deste material não ser digerido por bactérias, e nem reagir a substâncias no solo.
                         "
             android:textSize="10sp" />
 
