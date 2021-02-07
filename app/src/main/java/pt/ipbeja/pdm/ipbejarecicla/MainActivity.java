@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Toolbar toolbar = findViewById(R.id.mainToolBar);
         learn_more = findViewById(R.id.cardView_learn_more);
         impacts = findViewById(R.id.cardView_impacts);
-        about = findViewById(R.id.cardView_impacts);
+        about = findViewById(R.id.cardView_about);
 
         impacts.setOnClickListener(this);
         learn_more.setOnClickListener(this);
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent intent = new Intent(MainActivity.this, SaberMais.class);
             startActivity(intent);
         }   else if (v.getId() == R.id.cardView_about) {
-        Intent intent = new Intent(MainActivity.this, SaberMais.class);
+        Intent intent = new Intent(MainActivity.this, Sobre.class);
         startActivity(intent);
     }
     }

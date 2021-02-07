@@ -53,7 +53,7 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
 
         //Get data from firestore
         academicCommunityUsers = new ArrayList<>();
-        academicCommunityUsers  = getAcademicCommunityUsers();
+        academicCommunityUsers = getAcademicCommunityUsers();
 
         Spinner schoolSpinner = findViewById(R.id.spinner_escolas_signup);
         ArrayAdapter<CharSequence> schoolSpinnerAdapter = ArrayAdapter.createFromResource(this, R.array.spinnerEscolas, android.R.layout.simple_spinner_item);
@@ -69,7 +69,6 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
         btn_signup.setOnClickListener(this);
 
 
-
         emailEdit = findViewById(R.id.input_email);
         nameEdit = findViewById(R.id.input_full_name);
         passwordEdit = findViewById(R.id.input_password);
@@ -77,29 +76,30 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
 
     /**
      * Function to get and return the list of community users
+     *
      * @return List of academic community users
      */
     private List<QueryDocumentSnapshot> getAcademicCommunityUsers() {
 
         List<QueryDocumentSnapshot> list = new ArrayList<>();
 
-/*        mStore.collection("membrosComunidadeAcademica")
+        mStore.collection("membrosComunidadeAcademica")
                 .get()
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
                         Toast.makeText(this, "Successfully!", Toast.LENGTH_SHORT).show();
                         for (QueryDocumentSnapshot document : task.getResult()) {
-                            Toast.makeText(this, "Document: "+document.get("email"), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(this, "Document: " + document.get("email"), Toast.LENGTH_SHORT).show();
                             list.add(document);
                             Toast.makeText(this, "Segundo toast!", Toast.LENGTH_SHORT).show();
                         }
                     } else {
                         Toast.makeText(SignUpActivity.this, "Erro ao buscar dados dos membros da comunidade!", Toast.LENGTH_SHORT).show();
                     }
-                });*/
+                });
 
 
-        mStore.collection("membrosComunidadeAcademica")
+       /* mStore.collection("membrosComunidadeAcademica")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -114,7 +114,7 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
                             Log.d("TAG", "Error getting documents: ", task.getException());
                         }
                     }
-                });
+                });*/
         return list;
     }
 
@@ -134,12 +134,10 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
     public void onClick(View v) {
 
 
-
         if (v.getId() == R.id.textView_login) {
             Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
             startActivity(intent);
-        }
-        else if (v.getId() ==  R.id.btn_sign_up){
+        } else if (v.getId() == R.id.btn_sign_up) {
             registerUser();
         }
     }
@@ -158,8 +156,7 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
             emailEdit.setError("Por favor, insira o seu email!");
             emailEdit.requestFocus();
             return;
-        }
-        else  if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+        } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             emailEdit.setError("Por favor insira um email válido!");
             emailEdit.requestFocus();
             return;
@@ -179,32 +176,28 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
 
 
         //Check if user belongs to academic community
-        if(this.checkNewUser(email)){
+        if (this.checkNewUser(email)) {
             Toast.makeText(this, "Usuário registado, bem-vindo!", Toast.LENGTH_SHORT).show();
             this.registerNewUser(name, email, password);
 
             //Type of user is admin
-            if(type_of_user.equals("administrador"))
-            {
-                Intent intent = new Intent(SignUpActivity.this, MainAdminActivity.class);
+            if (type_of_user.equals("administrador")) {
+                Intent intent = new Intent(SignUpActivity.this, Statistics.class);
                 startActivity(intent);
-            }
-            else {
+            } else {
                 Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
                 startActivity(intent);
             }
 
-        }
-        else {
+        } else {
             Toast.makeText(this, "Email inválido, tente novamente!", Toast.LENGTH_SHORT).show();
         }
-
-
 
     }
 
     /**
      * Register new user and send data to database
+     *
      * @param name
      * @param email
      * @param password
@@ -226,8 +219,7 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
                         documentReference.set(user).addOnSuccessListener(aVoid -> Toast.makeText(SignUpActivity.this, "Utilizador criado com sucesso!", Toast.LENGTH_SHORT).show());
                         startActivity(new Intent(SignUpActivity.this, MainActivity.class));
                         finish();
-                    }
-                    else {
+                    } else {
                         Toast.makeText(SignUpActivity.this, "Falha ao criar utilizador!", Toast.LENGTH_LONG).show();
                     }
                 });
@@ -235,27 +227,26 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
 
     /**
      * Function to check if user belongs to academic community
+     *
      * @param email Email introduced by the user
      * @return Boolean value
      */
     private boolean checkNewUser(String email) {
 
         int q = academicCommunityUsers.size();
-        Toast.makeText(this, "Size is: "+q, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Size is: " + q, Toast.LENGTH_SHORT).show();
         for (int i = 0; i < q; i++) {
 
             String var = academicCommunityUsers.get(i).get("email").toString();
-            Log.d("TAG", "Usuario "+(i)+" "+var);
-            if (email.equals(var))
-            {
+            Log.d("TAG", "Usuario " + (i) + " " + var);
+            if (email.equals(var)) {
                 type_of_user = academicCommunityUsers.get(i).get("tipo_utilizador").toString();
                 school = academicCommunityUsers.get(i).get("escola").toString();
 
-                Toast.makeText(this, email+":"+var, Toast.LENGTH_LONG).show();
+                Toast.makeText(this, email + ":" + var, Toast.LENGTH_LONG).show();
                 return true;
-            }
-            else {
-                Toast.makeText(this, email+":"+var, Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(this, email + ":" + var, Toast.LENGTH_LONG).show();
             }
         }
 
